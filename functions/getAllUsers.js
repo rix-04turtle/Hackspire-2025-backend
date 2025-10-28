@@ -18,4 +18,4 @@ async function f2() {
     console.log("This is f2");
 }
 
-module.exports = getAllUsers;
+export default getAllUsers;

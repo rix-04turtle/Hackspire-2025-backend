@@ -1,5 +1,6 @@
-const getAllUsers = require('./functions/getAllUsers')
-const express = require('express')
+import getAllUsers from "./functions/getAllUsers";
+// import express
+import express from 'express';
 
 
 const app = express()
