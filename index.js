@@ -9,6 +9,7 @@ import addNewCrop from './functions/crops/create-new.js';
 import getAllIndianStates from './functions/indian-states/view-all.js';
 import updateAStateName from './functions/indian-states/update-name.js';
 import getStateFromCoordinates from './functions/apis/getState.js';
+import getCropsForAState from './functions/indian-states/get-crops.js';
 
 
 dotenv.config(); // Load environment variables from .env file
@@ -41,6 +42,7 @@ app.post('/crops/create-new', addNewCrop);
 app.get('/indian-states/get-all', getAllIndianStates);
 app.post('/indian-states/update-name', updateAStateName);
 app.post('/indian-states/update-crops', updateCropForAState);
+app.post('/indian-states/get-crops', getCropsForAState);
 
 app.post('/apis/get-state-from-coordinates', getStateFromCoordinates);
 
