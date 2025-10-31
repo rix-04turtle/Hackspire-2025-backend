@@ -23,8 +23,7 @@ async function getCropsForAState(req, res) {
         if (!state) {
             return res.status(404).json({ error: 'State not found' });
         }
-
-        
+       
 
         return res.status(200).json({
             state: state.name,
