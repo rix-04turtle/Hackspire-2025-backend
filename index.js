@@ -48,7 +48,7 @@ app.post('/indian-states/get-crops', getCropsForAState);
 app.post('/apis/get-state-from-coordinates', getStateFromCoordinates);
 
 // Text to Speech
-app.post('/api/text-to-speech', elevenLabsTextToSpeech);
+app.post('/apis/text-to-speech', elevenLabsTextToSpeech);
 
 app.listen(port, () => {
   console.clear();
