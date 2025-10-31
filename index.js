@@ -10,6 +10,7 @@ import getAllIndianStates from './functions/indian-states/view-all.js';
 import updateAStateName from './functions/indian-states/update-name.js';
 import getStateFromCoordinates from './functions/apis/getState.js';
 import getCropsForAState from './functions/indian-states/get-crops.js';
+import elevenLabsTextToSpeech from './functions/apis/elevenlabs-tts.js';
 
 
 dotenv.config(); // Load environment variables from .env file
@@ -45,6 +46,9 @@ app.post('/indian-states/update-crops', updateCropForAState);
 app.post('/indian-states/get-crops', getCropsForAState);
 
 app.post('/apis/get-state-from-coordinates', getStateFromCoordinates);
+
+// Text to Speech
+app.post('/api/text-to-speech', elevenLabsTextToSpeech);
 
 app.listen(port, () => {
   console.clear();
