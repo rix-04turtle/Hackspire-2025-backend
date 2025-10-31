@@ -1,4 +1,4 @@
-import connectDB from "../../utils/DB.js";
+import { connectDB } from "../../utils/DB.js";
 
 async function getAllIndianStates(req, res) {
     try {

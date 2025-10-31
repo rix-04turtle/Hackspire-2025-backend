@@ -1,4 +1,4 @@
-import connectDB from "../../utils/DB.js";
+import { connectDB } from "../../utils/DB.js";
 import { ObjectId } from "mongodb";
 
 async function updateAStateName(req, res) {
