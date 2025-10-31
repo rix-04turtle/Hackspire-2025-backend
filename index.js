@@ -4,9 +4,7 @@ import express from 'express'; // import express framework
 import getAllCrops from "./functions/crops/view-all.js";
 import getAllUsers from "./functions/getAllUsers.js";
 import updateCropForAState from "./functions/indian-states/update-crops.js";
-import updateAStateName from "./functions/indian-states/update-name.js";
-import getAllIndianStates from "./functions/indian-states/view-all.js";
-import addNewCrop from './functions/crops/create-new.js';
+import { signup, login } from "./functions/users/auth.js";
 
 dotenv.config(); // Load environment variables from .env file
 
@@ -25,6 +23,10 @@ app.get('/', (req, res) => {
 })
 
 app.get('/users', getAllUsers);
+
+// User Authentication
+app.post('/api/users/signup', signup);
+app.post('/api/users/login', login);
 
 // Crops
 app.get('/crops/get-all', getAllCrops);

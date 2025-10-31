@@ -1,5 +1,5 @@
 import { ObjectId } from "mongodb";
-import connectDB from "../../utils/DB.js";
+import { connectDB } from "../../utils/DB.js";
 
 async function updateCropForAState(req, res) {
     try {
