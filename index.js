@@ -5,6 +5,10 @@ import getAllCrops from "./functions/crops/view-all.js";
 import getAllUsers from "./functions/getAllUsers.js";
 import updateCropForAState from "./functions/indian-states/update-crops.js";
 import { signup, login } from "./functions/users/auth.js";
+import addNewCrop from './functions/crops/create-new.js';
+import getAllIndianStates from './functions/indian-states/view-all.js';
+import updateAStateName from './functions/indian-states/update-name.js';
+
 
 dotenv.config(); // Load environment variables from .env file
 
