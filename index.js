@@ -1,10 +1,12 @@
-import getAllUsers from "./functions/getAllUsers.js";
+import cors from 'cors';
 import dotenv from 'dotenv';
-import express from 'express';  // import express framework
+import express from 'express'; // import express framework
 import getAllCrops from "./functions/crops/view-all.js";
-import getAllIndianStates from "./functions/indian-states/view-all.js";
-import updateAStateName from "./functions/indian-states/update-name.js";
+import getAllUsers from "./functions/getAllUsers.js";
 import updateCropForAState from "./functions/indian-states/update-crops.js";
+import updateAStateName from "./functions/indian-states/update-name.js";
+import getAllIndianStates from "./functions/indian-states/view-all.js";
+import addNewCrop from './functions/crops/create-new.js';
 
 dotenv.config(); // Load environment variables from .env file
 
@@ -15,6 +17,9 @@ app.use(express.json());
 // For parsing application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
+// Enable Cors for all routes
+app.use(cors());
+
 app.get('/', (req, res) => {
   res.send('Sap da is Cool!')
 })
@@ -23,6 +28,7 @@ app.get('/users', getAllUsers);
 
 // Crops
 app.get('/crops/get-all', getAllCrops);
+app.post('/crops/create-new', addNewCrop);
 
 // Indian States
 app.get('/indian-states/get-all', getAllIndianStates);
