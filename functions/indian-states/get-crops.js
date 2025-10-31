@@ -24,14 +24,11 @@ async function getCropsForAState(req, res) {
             return res.status(404).json({ error: 'State not found' });
         }
 
-        // Fetch crops associated with the state
-        const crops = await db.collection('crops')
-            .find({ state_id: state._id })
-            .toArray();
+        
 
         return res.status(200).json({
             state: state.name,
-            crops: crops
+            crops: state.crops || []
         });
 
     } catch (error) {
