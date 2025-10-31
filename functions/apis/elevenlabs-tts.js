@@ -42,8 +42,15 @@ const elevenLabsTextToSpeech = async (req, res) => {
             return res.status(response.status).json({ error: 'Failed to generate speech from ElevenLabs.', details: errorData });
         }
 
+        // Get the audio data as an array buffer
+        const audioBuffer = await response.arrayBuffer();
+        
+        // Set the appropriate headers
         res.setHeader('Content-Type', 'audio/mpeg');
-        response.body.pipe(res);
+        res.setHeader('Content-Length', audioBuffer.byteLength);
+        
+        // Send the audio buffer
+        res.send(Buffer.from(audioBuffer));
 
     } catch (error) {
         console.error('Error calling ElevenLabs API:', error);
