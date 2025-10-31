@@ -12,5 +12,5 @@ const connectDB = async () => {
         return null
     }
 };
-
+export default connectDB;
 export { connectDB };
