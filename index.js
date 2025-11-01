@@ -49,16 +49,16 @@ app.get('/crops/get-all', getAllCrops);
 app.post('/crops/create-new', addNewCrop);
 
 // Protected Indian States Routes
-app.get('/indian-states/get-all', jwtVerify, getAllIndianStates);
-app.post('/indian-states/update-name', jwtVerify, updateAStateName);
-app.post('/indian-states/update-crops', jwtVerify, updateCropForAState);
-app.post('/indian-states/get-crops', jwtVerify, getCropsForAState);
+app.get('/indian-states/get-all', getAllIndianStates);
+app.post('/indian-states/update-name', updateAStateName);
+app.post('/indian-states/update-crops', updateCropForAState);
+app.post('/indian-states/get-crops', getCropsForAState);
 
 // Protected API Routes
-app.post('/apis/get-state-from-coordinates', jwtVerify, getStateFromCoordinates);
+app.post('/apis/get-state-from-coordinates', getStateFromCoordinates);
 
 // Text to Speech
-app.post('/apis/text-to-speech', jwtVerify, elevenLabsTextToSpeech);
+app.post('/apis/text-to-speech', elevenLabsTextToSpeech);
 
 app.listen(port, () => {
   console.clear();
